@@ -18,6 +18,8 @@ func StartServer(db *gorm.DB) *gin.Engine {
 	router.GET("/items", controller.GetItems)
 	router.POST("/orders", controller.CreateOrder)
 	router.GET("/orders", controller.GetOrders)
+	router.PUT("/orders/:id", controller.UpdateOrder)
+	router.DELETE("/orders/:id", controller.DeleteOrder)
 
 	return router
 }
